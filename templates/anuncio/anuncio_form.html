@@ -1,0 +1,17 @@
+{% extends 'base/base.html' %}
+
+{% block header %}
+Registro
+{% endblock %}
+
+{% block content %}
+    <form method="post" enctype="multipart/form-data">
+
+       {% csrf_token %}
+        {{ form2.as_p }}
+        <hr>
+        {{ form.as_p }}
+        <button type="submit">Registrar</button>
+
+    </form>
+{% endblock %}

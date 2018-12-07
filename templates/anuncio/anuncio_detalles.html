@@ -1,0 +1,70 @@
+{% extends 'base/base.html' %}
+
+{% block header %}
+{{ anuncio.vehiculo.marca }} - {{ anuncio.vehiculo.modelo }}
+{% endblock %}
+
+{% block content %}
+            <div class="col-md-9">
+
+                <div class="thumbnail">
+                    <img class="img-responsive" src="http://placehold.it/800x300" alt="">
+                    <div class="caption-full">
+                        <h4 class="pull-right">${{ anuncio.precio }}</h4>
+                        <h4><a href=#>{{ anuncio.titulo }}</a>
+                        </h4>
+                        <p>{{ anuncio.descripcion }}</p>
+                    </div>
+
+                </div>
+
+                <div class="well">
+
+                    <div class="text-left">
+                        <h3>Caracteristicas</h3>
+                    </div>
+
+                    <hr>
+
+                    <div class="row">
+
+                        <div class="col-md-3">
+                            <p>Placa: {{ anuncio.vehiculo.placa }}</p>
+                        </div>
+
+                        <div class="col-md-3">
+                            <p>Color: {{ anuncio.vehiculo.color }}</p>
+                        </div>
+
+                        <div class="col-md-3">
+                            <p>Kilometraje: {{ anuncio.vehiculo.kilometraje }}</p>
+                        </div>
+                        <div class="col-md-3">
+                            <p>Cilindraje: {{ anuncio.vehiculo.cilindraje }}</p>
+                        </div>
+                        <div class="col-md-3">
+                            <p>Direccion: {{ anuncio.vehiculo.tipoDireccion }}</p>
+                        </div>
+                        <div class="col-md-3">
+                            <p>Transmision: {{ anuncio.vehiculo.tipoTransmision }}</p>
+                        </div>
+                        <div class="col-md-3">
+                            <p>Puertas: {{ anuncio.vehiculo.nPuertas }}</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+                <p class="lead">Opciones</p>
+                <div class="list-group">
+                    <a href="#" class="list-group-item active">Agregar a favoritos</a>
+                    <a href="#" class="list-group-item">Denunciar</a>
+                    <a href="#" class="list-group-item">Vendedor: {{ anuncio.vendedor }}</a>
+                </div>
+            </div>
+
+{% endblock %}

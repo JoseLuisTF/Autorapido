@@ -1,0 +1,37 @@
+{% extends 'base/base.html' %}
+
+{% block header %}
+Resultados de tu busqueda...
+{% endblock %}
+
+
+{% block content %}
+
+
+
+
+
+
+{% if anuncios %}
+     <div class="row">
+    {% for anuncio in anuncios %}
+
+            <div class="col-md-4 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+                </a>
+                <h3>
+                    <a href="{% url 'anuncio:anuncio_detalles' anuncio.id %}">{{ anuncio.titulo }}</a>
+                    <h5>${{ anuncio.precio }}</h5>
+                    <h5>{{ anuncio.vehiculo.modelo }}</h5>
+                </h3>
+                <p>{{ anuncio.descripcion }}</p>
+            </div>
+
+    {% endfor %}
+      </div>
+    {% else %}
+    <h1>No hay anuncios disponibles</h1>
+    {% endif %}
+
+{% endblock%}
